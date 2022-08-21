@@ -4,11 +4,26 @@ import {
   NavLink,
   Routes,
   Route,
+  useNavigate,
 } from 'react-router-dom';
 
 const Todo = () => {
-  return <p>這是 Todo 頁面
-  </p>;
+  return (
+    <>
+      <p>這是 Todo 頁面
+      </p>
+      <Logout />
+    </>
+  );
+};
+const Logout = () => {
+  let navigate = useNavigate();
+
+  return (
+    <>
+      <button type="button" onClick={e => navigate('/login')}>登出</button>
+    </>
+  )
 };
 const Login = () => {
   return <p>這是登入頁面</p>;
@@ -34,6 +49,7 @@ function App() {
           <NavLink to="/todo">
             <p>Todo 頁面</p>
           </NavLink>
+
         </div>
         {/* Routes, Route 練習區 */}
         <Routes>
